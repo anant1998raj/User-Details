@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo List</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-sm-12 col-md-8 col-md-offset-2">
+          <h1>User Deltails</h1>
+          <div class="todo-inner">
+            <div class="form-row">
+
+<div class="form-popup" id="myForm" >
+  <form class="form-container" >
+    <h1>Add User Details</h1>
+    <label for="FirstName"><b>FirstName</b></label>
+    <input type="text" placeholder="Enter FirstName" name="FirstName" required id="txtFirstName">
+    
+     <label for="LastName"><b>LaststName</b></label>
+    <input type="text" placeholder="Enter LastName" name="LaststName" required id="txtLastName">
+    
+    <label for="SuperHeroName"><b>SuperHeroName</b></label>
+    <input type="text" placeholder="Enter SuperHeroName" name="SuperHeroName" required  id="txtSuperName">
+
+    <label for="Email"><b>Email</b></label>
+    <input type="email" placeholder="Enter Email" name="Email" required id="txtEmail">
+
+     <!-- <label for="Gender"><b>Gender</b></label>
+    <input type="text" placeholder="Gender" name="Gender"  id="txtGender"> -->
+
+    <label for="Gender">Gender:</label>
+                            <select class="form-control" id="txtGender" required name="Gender">
+                          <option>Male</option>
+                          <option>Female</option>
+                          <option>others</option>
+                        </select>
+    
+     <label for="Age"><b>Age</b></label>
+    <input type="number" placeholder="Enter Age"  name="Age"  required id="txtAge">
+
+    <button type="submit" class="btn" id="addtaskbtn">Save</button>
+    
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+              
+              <div style="float:right; margin-bottom:10px">
+              <button type="button" id="deleteallbtn" class="btn btn-danger" onclick="deleteRow()">
+                Delete
+              </button>
+              <button class="btn btn-primary" onclick="openForm()">Add</button>
+              <input class="search_bord" type="search" placeholder="Search" aria-label="Search" onkeyup="searchTable()"
+              id="myInput" />
+            </div>
+            </div>
+            <div class="to-do-output">
+              <table class="table table-striped mt-3 mb-0" id="addedtasklist" style="border:1px solid #ccc">
+                
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
